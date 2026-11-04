@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>知页 · 课程资料问答助手</title><meta name="description" content="导入课程笔记，检索相关原文并核对出处。无需登录，浏览器本地运行。"><link rel="stylesheet" href="style.css"><script src="sample-data.js" defer></script><script src="app.js" defer></script></head>
+<body>
+<header><a class="brand" href="./">知页<span>课程资料问答助手</span></a><nav><a href="video.html">演示视频 ↗</a><a href="https://github.com/Hjw070/zhiye-course-assistant" target="_blank" rel="noopener">项目源码 ↗</a></nav></header>
+<section class="intro"><div><p class="eyebrow">高级组 · 跨域知识探索</p><h1>从课程资料里，<br class="mobile">找到有出处的答案。</h1><p>导入笔记，提出问题，再回到原文核对。<span class="pill">浏览器离线检索版</span></p></div></section>
+<main><aside>
+<div class="section-title"><span>01</span><h2>资料库</h2></div><ul id="library"></ul><p id="stats" class="muted"></p>
+<label class="button primary file-button" for="files">＋ 导入 TXT / Markdown<input id="files" type="file" accept=".txt,.md" multiple></label><button id="reset" class="button secondary">恢复演示资料</button>
+<div class="examples"><h3>从一个问题开始</h3><button data-question="如何缓解过拟合？">如何缓解过拟合？ <span>↗</span></button><button data-question="精确率与召回率有什么区别？">精确率与召回率有什么区别？ <span>↗</span></button><button data-question="什么是机会成本？">什么是机会成本？ <span>↗</span></button><button data-question="火星上有多少家咖啡馆？">试试一个资料外的问题 <span>↗</span></button></div>
+<div class="local-note"><b>资料留在你的浏览器中</b><p>导入的内容仅在本页内存中处理，刷新后清除。当前页面只检索并摘录原文；大模型模式可在桌面版配置。</p></div>
+</aside><section class="workspace">
+<div class="section-title"><span>02</span><h2>提出问题</h2></div>
+<form id="question-form"><label class="sr-only" for="question">输入课程资料问题</label><textarea id="question" maxlength="2000" rows="3" placeholder="例如：精确率与召回率有什么区别？"></textarea><div class="form-actions"><button class="button primary" type="submit">查找答案 →</button><span class="muted">Ctrl + Enter</span><button id="export" type="button" class="text-button">导出本次会话 ↓</button></div></form>
+<div class="section-title result-heading"><span>03</span><h2>回答与出处</h2><span id="hit-count" class="muted"></span></div>
+<div id="result" aria-live="polite"><div class="welcome"><div class="welcome-icon">文</div><h3>资料已经就绪</h3><p>左侧有两份自编演示资料。点击示例问题，或导入自己的课程笔记。</p><p class="muted">每条结果保留文件名、行号和原文。<br>检索相似度只用于排序，请核对资料。</p></div></div>
+</section></main>
+<footer><p id="status" role="status">准备就绪 · 无需登录或 API Key</p><p>知页 · 课程作业原型 <a href="video.html">查看 70 秒演示</a></p></footer>
+</body></html>
